@@ -20,3 +20,6 @@ def get_all_cats():
 def get_cat_by_id(id):
 	c1= session.query(Cat).filter_by(id=id).one()
 	return c1
+
+
+

@@ -1,5 +1,5 @@
 from flask import Flask
-from flask import render_template
+from flask import render_template, request, redirect, url_for
 from database import *
 
 
@@ -14,6 +14,19 @@ def catbook_home():
 def cat_profile(id):
 	cat= get_cat_by_id(id)
 	return render_template("cat.html", cat=cat)
+
+@app.route('/create', methods=['GET', 'POST'])
+def homepage():
+    if request.method == 'GET':
+        return render_template('form.html')
+    else:
+        name = request.form['firstname']
+        
+
+
+        create_cat(name)        
+        return redirect(url_for('catbook_home'))
+
 
 
 
