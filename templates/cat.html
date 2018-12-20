@@ -20,7 +20,14 @@
 <body>
 	<h1> My Name is: {{cat.name}}</h1>
 	<h2> click the button and vote me!</h2>
-	<button type= "button" class="btn btn-primary">Vote
+  <form action= "/vote/{{cat.id}}" method= "POST">
+
+	<!-- <button type= "button" class="btn btn-primary"> -->
+  </form>
+
+  <a href = "/vote/{{cat.id}}">
+    Vote
+  </a>
 	
 
 </body>

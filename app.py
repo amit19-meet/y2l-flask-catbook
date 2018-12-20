@@ -27,9 +27,15 @@ def homepage():
         create_cat(name)        
         return redirect(url_for('catbook_home'))
 
+@app.route('/vote/<int:id>')
+def vote(id):
+    cat_vote(id)
+    return redirect (url_for('catbook_home'))
+
+
 
 
 
 
 if __name__ == '__main__':
-   app.run(debug = True)
+    app.run(debug = True)
